@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   //to make inner components of SVG you must use an [attribute] selector: 
   selector: '[app-circle]',
- // inputs: ['circle'],
   templateUrl: './circle.component.html',
   styleUrls: ['./circle.component.scss']
 })
 export class CircleComponent implements OnInit {
   @Input('circle') circle: any
+  @Output() newLevel = new EventEmitter()
   clicked(event) {
-   //console.log("clicked " + this.circle.id)
+   this.newLevel.emit("newLevel")
   }
 
   constructor() { 
