@@ -1,7 +1,5 @@
 <svg viewBox = "0 0 900 500">
-    <svg:circle  *ngFor = "let circle of circles"
-                (click)="clicked()"
-                [attr.cx]="circle.x"
-                [attr.cy]="circle.y"
-                [attr.r]="circle.radius" />
+    <g app-circle
+              *ngFor = "let circle of circles"
+               [circle]="circle" /> 
 </svg> 
